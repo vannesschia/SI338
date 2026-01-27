@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Performance Visualization</title>
+  </head>
+  <body>
+    <section id="performance-visualization">
+      <h1>Performance Visualization</h1>
+
+      <label for="displayMode">Display data by:</label>
+      <select id="displayMode">
+        <option value="event">Event type</option>
+        <option value="date">Date</option>
+        <option value="metric">Metric</option>
+        <!-- Other data type options will be included here -->
+      </select>
+
+      <canvas id="performanceChart"></canvas>
+    </section>
+
+    <!-- Charts will be displayed using the Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Placeholder - real race data should be injected here later
+      let chartData = null;
+
+      const canvas = document.getElementById("performanceChart");
+      const select = document.getElementById("displayMode");
+
+      const chart = new Chart(canvas, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [],
+        },
+        options: {
+          responsive: true,
+        },
+      });
+
+      // JS to respond to user selection
+      select.addEventListener("change", () => {
+        const mode = select.value;
+
+        chart.update();
+      });
+    </script>
+  </body>
+</html>

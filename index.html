@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Garrett Comer</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+<body>
+  <!-- Header section with basic racer information -->
+  <header class="top-header">
+    <img src="{{IMAGE_URL}}" alt="Image of Garrett Comer"/>
+    <div>
+      <h1>Garrett Comer</h1>
+      <p><strong>School:</strong>{{SCHOOL_NAME}}</p>
+      <p><strong>Stats:</strong>{{STATS}}</p>
+      <p><strong>Contact Info:</strong>{{CONTACT_INFO}}</p>
+      <p>{{INTO_TEXT}}</p>
+    </div>
+  </header>
+
+  <!-- Grid section with cards per meet -->
+  <main class="grid-section">
+    <!-- The following section represents a singular card -->
+    <div class="card">
+      <div class="card-header">
+        <h2>{{MEET_NAME}}</h2>
+        <p>{{MEET_DATE}}</p>
+        <button class="expand-btn" type="button" aria-expanded="false">
+          Click to expand
+        </button>
+      </div>
+      <div class="card-content" hidden>
+        <p>{{MEET_DETAILS}}</p>
+      </div>
+    </div>
+    <!-- More cards will be included here -->
+  </main>
+
+  <script>
+    // JS will be included here for the expansion logid
+  </script>
+</html>
