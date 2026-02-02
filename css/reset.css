@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -37,18 +36,14 @@ input, button, textarea, select {
 
 button {
   background: none;
-  border: none;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
   padding: 0;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: inherit;
 }
 
 blockquote, q {
