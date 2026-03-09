@@ -4,41 +4,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Athlete Profile</title>
+  <title>Garrett Comer</title>
+  <meta name="description" content="Mobile-first athlete profile for Garrett Comer with accessible race summaries and a performance chart.">
+  <meta name="theme-color" content="#10233f">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/reset.css">
 </head>
 
 <body>
-  <header>
-    <div id="profile" class="profile" role="group" aria-label="Athlete header">
-      <figure>
-        <img class="photo" src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/cover_photo.jpg" alt="Portrait of the Garrett Comer.">
-      </figure>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="fab" href="#performance-panel" aria-label="Jump to performance chart">Chart</a>
+    <header class="site-header">
+    <div class="profile-shell">
+      <div class="profile-bar" role="group" aria-label="Athlete header">
+        <div class="profile-bar-main">
+          <img class="photo photo-inline" src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/cover_photo.jpg" alt="Portrait of Garrett Comer.">
+          <div class="profile-bar-copy">
+            <p class="eyebrow">Skyline Cross Country</p>
+            <h1>Garrett Comer</h1>
+          </div>
+        </div>
 
-      <div class="meta">
-        <h1>Garrett Comer</h1>
+        <div class="profile-actions">
+          <button type="button" class="utility-button" id="profile-toggle" aria-expanded="false" aria-controls="profile-panel">
+            About Garrett
+          </button>
+          <button type="button" class="utility-button utility-button-theme" id="theme-toggle" aria-pressed="false" aria-label="Switch between light mode and dark mode">
+            Dark mode
+          </button>
+        </div>
+      </div>
 
-        <section aria-labelledby="profile-details-title">
-          <h2 id="profile-details-title">Profile details</h2>
-          <p><strong>School:</strong> Ann Arbor Skyline HS</p>
-          <p><strong>Year:</strong> 11th Grade</p>
-          <p><strong>Contact:</strong> <a href="#" aria-label="Email">example@gmail.com</a></p>
-        </section>
+      <div id="profile-panel" class="profile-panel" hidden>
+        <div class="meta">
+          <section aria-labelledby="profile-details-title">
+            <h2 id="profile-details-title">Profile details</h2>
+            <p><strong>School:</strong> Ann Arbor Skyline HS</p>
+            <p><strong>Year:</strong> 11th Grade</p>
+            <p><strong>Contact:</strong> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+          </section>
 
-        <section aria-labelledby="bio-title">
-          <h2 id="bio-title">Bio</h2>
-          <p>
-            Garrett is a junior on the skyline xc team. After a mediocre freshman year and a devestating season lasting injury his sophmore year, Garrett was more determended than ever to run well. He was one of the most consistant runners on the team getting that top 7 spot on the team every single race. He excelled in not just running but motivating, by always leading cheers and getting everyone hyped up while still staying positive. His favroite memories of the team was being at camp with everyone and playing games all day while still being full of energy. His favroite race was at holly when their team placed first and went up on stage togerther with a big trophie.
-          </p>
-        </section>
+          <section aria-labelledby="bio-title">
+            <h2 id="bio-title">Bio</h2>
+            <p>
+              Garrett is a junior on the Skyline XC team. After a mediocre freshman year and a season-ending injury during sophomore year, Garrett was more determined than ever to run well. He became one of the most consistent runners on the team, earning a top-7 spot in every race. He stood out not only for his running, but also for motivating teammates by leading cheers, keeping energy high, and staying positive. His favorite memories come from team camp, where everyone spent the day playing games and still had energy left over. His favorite race was Holly, where the team placed first and went on stage together with a big trophy.
+            </p>
+          </section>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="main">
+    <section class="stats-overview" aria-labelledby="stats-title">
+      <div class="section-heading">
+        <h2 id="stats-title">Season Snapshot</h2>
+        <p class="section-copy">Some key numbers for Garret Comer.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <h3>Best recorded time</h3>
+          <p class="stat-value" id="best-time-value">Loading…</p>
+          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="best-time-bar"></span></div>
+        </article>
+
+        <article class="stat-card">
+          <h3>Latest recorded time</h3>
+          <p class="stat-value" id="latest-time-value">Loading…</p>
+          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="latest-time-bar"></span></div>
+        </article>
+
+        <article class="stat-card">
+          <h3>Improvement</h3>
+          <p class="stat-value" id="improvement-value">Loading…</p>
+          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="improvement-bar"></span></div>
+        </article>
+
+        <article class="stat-card">
+          <h3>Charted meets</h3>
+          <p class="stat-value" id="meet-count-value">Loading…</p>
+          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="meet-count-bar"></span></div>
+        </article>
+      </div>
+    </section>
+
     <section id="meets" class="meets" aria-labelledby="meets-title">
-      <h2 id="meets-title">Meets</h2>
+      <div class="section-heading"><h2 id="meets-title">Meets</h2><p class="section-copy">Meet details below; click on 'More Info' for more details.</p></div>
 
       <div id="meet-grid" class="meet-grid">
 
@@ -563,64 +615,247 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script id="race-data" type="application/json">[{"date": "Aug 31 2023", "meet": "Early Bird Open (Open Men's 5K)", "time": "19:45.4", "seconds": 1185.4}, {"date": "Sep 9 2023", "meet": "Bret Clements Bath Invitational (J.V.)", "time": "19:16.3", "seconds": 1156.3}, {"date": "Sep 13 2023", "meet": "SEC-HS Jamboree 1 (Red/White Varsity Boys)", "time": "19:22.2", "seconds": 1162.2}, {"date": "Sep 23 2023", "meet": "Jackson Invitational - Varsity (Orange Division (1000 + enrolment))", "time": "18:47.9", "seconds": 1127.9}, {"date": "Sep 27 2023", "meet": "SEC Jamboree 2 (Red) (Reserve Wave 1 (<21:00))", "time": "18:36.0", "seconds": 1116.0}, {"date": "Oct 7 2023", "meet": "2023 Portage XC Invitational (Division 1 Reserve)", "time": "18:47.1", "seconds": 1127.1}, {"date": "Oct 14 2023", "meet": "39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)", "time": "20:06.6", "seconds": 1206.6}, {"date": "Oct 19 2023", "meet": "SEC HS Championship (All Division Reserve)", "time": "19:21.8", "seconds": 1161.8}, {"date": "Oct 28 2023", "meet": "Post Regional Open Meet (PROM) - Springfiled Oaks", "time": "18:24.6 SR", "seconds": null}, {"date": "Aug 29 2024", "meet": "37th Early Bird Open (HS Open 5K)", "time": "21:04.2", "seconds": 1264.2}, {"date": "Oct 5 2024", "meet": "2024 Portage Invitational", "time": "21:04.9", "seconds": 1264.9}, {"date": "Oct 11 2024", "meet": "19th River Rat Open", "time": "20:34.8", "seconds": 1234.8}, {"date": "Oct 17 2024", "meet": "SEC-HS Championship", "time": "19:17.8", "seconds": 1157.8}, {"date": "Oct 26 2024", "meet": "Region 4-1 & 16-2 PROM Races", "time": "18:42.7 SR", "seconds": null}, {"date": "Aug 15 2025", "meet": "Lamplighter Invitational", "time": "17:22.3", "seconds": 1042.3}, {"date": "Aug 27 2025", "meet": "2nd Ann Arbor City Preview presented by AARC", "time": "17:40.1", "seconds": 1060.1}, {"date": "Sep 9 2025", "meet": "SEC-HS Jamboree 1 (Red/White Varsity Boys)", "time": "16:55.1", "seconds": 1015.1}, {"date": "Sep 13 2025", "meet": "57th Annual Holly-Duane Raffin Festival of Races (D1 Boys)", "time": "16:58.4", "seconds": 1018.4}, {"date": "Sep 20 2025", "meet": "Jackson Invitational (Orange Division (1000 + enrolment))", "time": "16:46.8", "seconds": 1006.8}, {"date": "Sep 25 2025", "meet": "SEC-HS Jamboree 2 (Red) (Varsity Boys (Top 10))", "time": "16:55.9", "seconds": 1015.9}, {"date": "Sep 27 2025", "meet": "DeWitt Cross Country Invitational (Boys Varsity Division 1 and 2)", "time": "16:55.4", "seconds": 1015.4}, {"date": "Oct 4 2025", "meet": "2025 Portage Invitational (Division 1)", "time": "16:49.8", "seconds": 1009.8}, {"date": "Oct 10 2025", "meet": "20th River Rat Open / Regional Preview (All Boys)", "time": "17:16.1", "seconds": 1036.1}, {"date": "Oct 16 2025", "meet": "SEC-HS Championship (Varsity RED)", "time": "17:00.5", "seconds": 1020.5}, {"date": "Oct 24 2025", "meet": "MHSAA LP Region 04-01 @ DeWitt (C)", "time": "16:43.8 PR", "seconds": null}, {"date": "Nov 8 2025", "meet": "MITCA Michigan Meet of Champions 2025 by HOKA (Boys Elite Open #2)", "time": "16:44.5", "seconds": 1004.5}]</script>
 <script>
+  function formatTime(sec) {
+    if (typeof sec !== "number" || Number.isNaN(sec)) return "—";
+    const m = Math.floor(sec / 60);
+    const s = sec - m * 60;
+    const sInt = Math.floor(s);
+    const tenths = Math.round((s - sInt) * 10);
+    const ss = String(sInt).padStart(2, "0");
+    return tenths > 0 ? `${m}:${ss}.${tenths}` : `${m}:${ss}`;
+  }
+
+  function clampPercent(value) {
+    return `${Math.max(0, Math.min(100, value))}%`;
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function closeOtherPanels(currentButton) {
+    document.querySelectorAll("button.open-panel").forEach((button) => {
+      const targetId = button.getAttribute("aria-controls");
+      const panel = targetId ? document.getElementById(targetId) : null;
+      if (!panel || button === currentButton) return;
+      button.setAttribute("aria-expanded", "false");
+      panel.hidden = true;
+    });
+  }
+
   document.addEventListener("click", function (e) {
     const btn = e.target.closest("button.open-panel");
     if (!btn) return;
 
     const targetId = btn.getAttribute("aria-controls");
-    if (!targetId) return;
-
-    const panel = document.getElementById(targetId);
+    const panel = targetId ? document.getElementById(targetId) : null;
     if (!panel) return;
 
-    const isOpen = !panel.hasAttribute("hidden");
-    if (isOpen) {
-      panel.setAttribute("hidden", "");
-      btn.setAttribute("aria-expanded", "false");
-    } else {
-      panel.removeAttribute("hidden");
-      btn.setAttribute("aria-expanded", "true");
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+    closeOtherPanels(btn);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    panel.hidden = isOpen;
+
+    if (!isOpen) {
+      panel.setAttribute("tabindex", "-1");
+      panel.focus({ preventScroll: false });
     }
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const el = document.getElementById("race-data");
-    const canvas = document.getElementById("time-chart");
-    if (!el || !canvas || typeof Chart === "undefined") return;
 
-    const races = JSON.parse(el.textContent || "[]")
-      .filter(r => typeof r.seconds === "number" && !Number.isNaN(r.seconds));
+  function applyTheme(theme) {
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("theme-toggle");
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const resolvedTheme = theme === "dark" || theme === "light"
+      ? theme
+      : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
-    if (!races.length) return;
+    root.setAttribute("data-theme", resolvedTheme);
 
-    const labels = races.map(r => r.date);
-    const seconds = races.map(r => r.seconds);
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60);
-      const s = sec - m * 60;
-      const sInt = Math.floor(s);
-      const tenths = Math.round((s - sInt) * 10);
-      const ss = String(sInt).padStart(2, "0");
-      return tenths > 0 ? `${m}:${ss}.${tenths}` : `${m}:${ss}`;
+    if (themeToggle) {
+      const nextLabel = resolvedTheme === "dark" ? "Light mode" : "Dark mode";
+      themeToggle.textContent = nextLabel;
+      themeToggle.setAttribute("aria-pressed", String(resolvedTheme === "dark"));
     }
 
+    if (metaTheme) {
+      metaTheme.setAttribute("content", resolvedTheme === "dark" ? "#07111f" : "#10233f");
+    }
+  }
+
+  function storedTheme() {
+    try {
+      return localStorage.getItem("garrett-theme");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem("garrett-theme", theme);
+    } catch (error) {
+      return;
+    }
+  }
+
+  function syncProfilePanelState(expanded) {
+    const toggle = document.getElementById("profile-toggle");
+    const panel = document.getElementById("profile-panel");
+    if (!toggle || !panel) return;
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.textContent = expanded ? "Hide details" : "About Garrett";
+    panel.hidden = !expanded;
+  }
+
+  function updateChartTheme(chart) {
+    if (!chart) return;
+    chart.data.datasets[0].borderColor = cssVar("--chart-line");
+    chart.data.datasets[0].backgroundColor = cssVar("--chart-fill");
+    chart.data.datasets[0].pointBackgroundColor = cssVar("--chart-point");
+    chart.data.datasets[0].pointBorderColor = cssVar("--surface");
+    chart.options.plugins.legend.labels.color = cssVar("--text");
+    chart.options.scales.y.grid.color = cssVar("--chart-grid");
+    chart.options.scales.y.ticks.color = cssVar("--muted");
+    chart.options.scales.y.title.color = cssVar("--text");
+    chart.options.scales.x.ticks.color = cssVar("--muted");
+    chart.options.scales.x.title.color = cssVar("--text");
+    chart.update();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const profileToggle = document.getElementById("profile-toggle");
+    const profilePanel = document.getElementById("profile-panel");
+    const themeToggle = document.getElementById("theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const savedTheme = storedTheme();
+    let activeChart = null;
+
+    applyTheme(savedTheme);
+    syncProfilePanelState(false);
+
+    if (profileToggle && profilePanel) {
+      profileToggle.addEventListener("click", function () {
+        const expanded = profileToggle.getAttribute("aria-expanded") === "true";
+        syncProfilePanelState(!expanded);
+      });
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", function () {
+        const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        const next = current === "dark" ? "light" : "dark";
+        applyTheme(next);
+        updateChartTheme(activeChart);
+        saveTheme(next);
+      });
+    }
+
+    if (mediaQuery && typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", function () {
+        if (!storedTheme()) {
+          applyTheme(null);
+          updateChartTheme(activeChart);
+        }
+      });
+    }
+
+    const el = document.getElementById("race-data");
+    const canvas = document.getElementById("time-chart");
+    if (!el) return;
+
+    const allRaces = JSON.parse(el.textContent || "[]");
+    const races = allRaces.filter((r) => typeof r.seconds === "number" && !Number.isNaN(r.seconds));
+    if (!races.length) return;
+
+    const best = [...races].sort((a, b) => a.seconds - b.seconds)[0];
+    const latest = races[races.length - 1];
+    const first = races[0];
+    const slowestSeconds = Math.max(...races.map((r) => r.seconds));
+    const fastestSeconds = Math.min(...races.map((r) => r.seconds));
+    const range = Math.max(1, slowestSeconds - fastestSeconds);
+    const improvement = first.seconds - latest.seconds;
+
+    const bestTimeValue = document.getElementById("best-time-value");
+    const latestTimeValue = document.getElementById("latest-time-value");
+    const improvementValue = document.getElementById("improvement-value");
+    const meetCountValue = document.getElementById("meet-count-value");
+
+    const bestTimeBar = document.getElementById("best-time-bar");
+    const latestTimeBar = document.getElementById("latest-time-bar");
+    const improvementBar = document.getElementById("improvement-bar");
+    const meetCountBar = document.getElementById("meet-count-bar");
+
+    if (bestTimeValue) bestTimeValue.textContent = `${formatTime(best.seconds)} • ${best.date}`;
+    if (latestTimeValue) latestTimeValue.textContent = `${formatTime(latest.seconds)} • ${latest.date}`;
+    if (improvementValue) {
+      const direction = improvement >= 0 ? "faster" : "slower";
+      improvementValue.textContent = `${formatTime(Math.abs(improvement))} ${direction} than first charted race`;
+    }
+    if (meetCountValue) meetCountValue.textContent = `${races.length} timed meets`;
+
+    if (bestTimeBar) bestTimeBar.style.width = clampPercent(((slowestSeconds - best.seconds) / range) * 100);
+    if (latestTimeBar) latestTimeBar.style.width = clampPercent(((slowestSeconds - latest.seconds) / range) * 100);
+    if (improvementBar) improvementBar.style.width = clampPercent((Math.max(0, improvement) / Math.max(1, first.seconds - fastestSeconds)) * 100);
+    if (meetCountBar) meetCountBar.style.width = clampPercent((races.length / allRaces.length) * 100);
+
+    document.querySelectorAll(".meet-card").forEach((card) => {
+      const details = card.querySelector(".race-details");
+      const button = card.querySelector(".open-panel");
+      if (!details || !button) return;
+
+      const pieces = [...details.querySelectorAll("p")].slice(0, 3).map((p) => p.textContent?.trim()).filter(Boolean);
+      if (!pieces.length) return;
+
+      const meta = document.createElement("ul");
+      meta.className = "meet-meta";
+      pieces.forEach((text) => {
+        const item = document.createElement("li");
+        item.className = "meet-chip";
+        item.textContent = text;
+        meta.appendChild(item);
+      });
+
+      card.insertBefore(meta, button);
+    });
+
+    if (!canvas || typeof Chart === "undefined") return;
+
+    const labels = races.map((r) => r.date);
+    const seconds = races.map((r) => r.seconds);
+
     const ctx = canvas.getContext("2d");
-    new Chart(ctx, {
+    activeChart = new Chart(ctx, {
       type: "line",
       data: {
         labels,
         datasets: [{
           label: "Race time",
           data: seconds,
-          tension: 0.25,
-          pointRadius: 3
+          borderColor: cssVar("--chart-line"),
+          backgroundColor: cssVar("--chart-fill"),
+          pointBackgroundColor: cssVar("--chart-point"),
+          pointBorderColor: cssVar("--surface"),
+          tension: 0.28,
+          borderWidth: 3,
+          pointRadius: 3,
+          pointHoverRadius: 4,
+          fill: false
         }]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
+        animation: prefersReducedMotion() ? false : { duration: 900 },
         plugins: {
+          legend: {
+            labels: { color: cssVar("--text") }
+          },
           tooltip: {
             callbacks: {
               title: (items) => {
@@ -638,17 +873,35 @@
         scales: {
           y: {
             reverse: true,
+            grid: { color: cssVar("--chart-grid") },
             ticks: {
+              color: cssVar("--muted"),
               callback: (value) => formatTime(value)
             },
-            title: { display: true, text: "Time (mm:ss)" }
+            title: {
+              display: true,
+              text: "Time (mm:ss)",
+              color: cssVar("--text")
+            }
           },
           x: {
-            title: { display: true, text: "Meet date" }
+            grid: { display: false },
+            ticks: {
+              color: cssVar("--muted"),
+              maxRotation: 45,
+              minRotation: 45
+            },
+            title: {
+              display: true,
+              text: "Meet date",
+              color: cssVar("--text")
+            }
           }
         }
       }
     });
+
+    updateChartTheme(activeChart);
   });
 </script>
 
