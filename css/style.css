@@ -15,6 +15,8 @@
   --radius-lg: 1.2rem;
   --radius-md: 0.9rem;
   --max-mobile-width: 29rem;
+  --max-tablet-width: 64rem;
+  --max-desktop-width: 84rem;
   --chart-line: #0c63ce;
   --chart-fill: rgba(12, 99, 206, 0.14);
   --chart-point: #0c63ce;
@@ -300,12 +302,6 @@ main {
   padding: 0.9rem;
 }
 
-.stat-value {
-  min-height: 3rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
 .progress-track {
   height: 0.65rem;
   overflow: hidden;
@@ -476,6 +472,77 @@ a:focus-visible,
   }
 }
 
+
+/* Larger-screen layout builds on the default mobile styles. */
+@media (min-width: 700px) {
+  .site-header,
+  main {
+    width: min(calc(100% - 2rem), var(--max-tablet-width));
+  }
+
+  .profile-shell {
+    padding: 1rem;
+  }
+
+  .profile-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .profile-actions {
+    justify-content: flex-end;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .meet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .viz-area {
+    min-height: 24rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .site-header,
+  main {
+    width: min(calc(100% - 3rem), var(--max-desktop-width));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .meet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .panel {
+    position: static;
+    margin-top: 1.25rem;
+  }
+
+  .viz-area {
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .meet-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .viz-area {
+    min-height: 36rem;
+  }
+}
+
 /* Reduced-motion user preferences. */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -488,8 +555,4 @@ a:focus-visible,
     animation: none !important;
     transition: none !important;
   }
-}
-
-.utility-button-theme {
-  margin-left: auto;
 }

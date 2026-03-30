@@ -29,7 +29,7 @@
           <button type="button" class="utility-button" id="profile-toggle" aria-expanded="false" aria-controls="profile-panel">
             About Garrett
           </button>
-          <button type="button" class="utility-button utility-button-theme" id="theme-toggle" aria-pressed="false" aria-label="Switch between light mode and dark mode">
+          <button type="button" class="utility-button" id="theme-toggle" aria-pressed="false" aria-label="Switch between light mode and dark mode">
             Dark mode
           </button>
         </div>
@@ -65,26 +65,22 @@
       <div class="stats-grid">
         <article class="stat-card">
           <h3>Best recorded time</h3>
-          <p class="stat-value" id="best-time-value">Loading…</p>
-          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="best-time-bar"></span></div>
+          <p id="best-time-value">Loading…</p>
         </article>
 
         <article class="stat-card">
           <h3>Latest recorded time</h3>
-          <p class="stat-value" id="latest-time-value">Loading…</p>
-          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="latest-time-bar"></span></div>
+          <p id="latest-time-value">Loading…</p>
         </article>
 
         <article class="stat-card">
           <h3>Improvement</h3>
-          <p class="stat-value" id="improvement-value">Loading…</p>
-          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="improvement-bar"></span></div>
+          <p id="improvement-value">Loading…</p>
         </article>
 
         <article class="stat-card">
           <h3>Charted meets</h3>
-          <p class="stat-value" id="meet-count-value">Loading…</p>
-          <div class="progress-track" aria-hidden="true"><span class="progress-fill" id="meet-count-bar"></span></div>
+          <p id="meet-count-value">Loading…</p>
         </article>
       </div>
     </section>
@@ -625,10 +621,6 @@
     return tenths > 0 ? `${m}:${ss}.${tenths}` : `${m}:${ss}`;
   }
 
-  function clampPercent(value) {
-    return `${Math.max(0, Math.min(100, value))}%`;
-  }
-
   function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
@@ -786,23 +778,13 @@
     const improvementValue = document.getElementById("improvement-value");
     const meetCountValue = document.getElementById("meet-count-value");
 
-    const bestTimeBar = document.getElementById("best-time-bar");
-    const latestTimeBar = document.getElementById("latest-time-bar");
-    const improvementBar = document.getElementById("improvement-bar");
-    const meetCountBar = document.getElementById("meet-count-bar");
-
     if (bestTimeValue) bestTimeValue.textContent = `${formatTime(best.seconds)} • ${best.date}`;
     if (latestTimeValue) latestTimeValue.textContent = `${formatTime(latest.seconds)} • ${latest.date}`;
     if (improvementValue) {
       const direction = improvement >= 0 ? "faster" : "slower";
       improvementValue.textContent = `${formatTime(Math.abs(improvement))} ${direction} than first charted race`;
     }
-    if (meetCountValue) meetCountValue.textContent = `${races.length} timed meets`;
-
-    if (bestTimeBar) bestTimeBar.style.width = clampPercent(((slowestSeconds - best.seconds) / range) * 100);
-    if (latestTimeBar) latestTimeBar.style.width = clampPercent(((slowestSeconds - latest.seconds) / range) * 100);
-    if (improvementBar) improvementBar.style.width = clampPercent((Math.max(0, improvement) / Math.max(1, first.seconds - fastestSeconds)) * 100);
-    if (meetCountBar) meetCountBar.style.width = clampPercent((races.length / allRaces.length) * 100);
+    if (meetCountValue) meetCountValue.textContent = `${allRaces.length} total meets`;
 
     document.querySelectorAll(".meet-card").forEach((card) => {
       const details = card.querySelector(".race-details");
