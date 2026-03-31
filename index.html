@@ -651,11 +651,6 @@
     closeOtherPanels(btn);
     btn.setAttribute("aria-expanded", String(!isOpen));
     panel.hidden = isOpen;
-
-    if (!isOpen) {
-      panel.setAttribute("tabindex", "-1");
-      panel.focus({ preventScroll: false });
-    }
   });
 
 
@@ -770,7 +765,6 @@
     const first = races[0];
     const slowestSeconds = Math.max(...races.map((r) => r.seconds));
     const fastestSeconds = Math.min(...races.map((r) => r.seconds));
-    const range = Math.max(1, slowestSeconds - fastestSeconds);
     const improvement = first.seconds - latest.seconds;
 
     const bestTimeValue = document.getElementById("best-time-value");
