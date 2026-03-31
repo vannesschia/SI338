@@ -7,16 +7,16 @@
   <title>Garrett Comer</title>
   <meta name="description" content="Mobile-first athlete profile for Garrett Comer with accessible race summaries and a performance chart.">
   <meta name="theme-color" content="#10233f">
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <a class="fab" href="#performance-panel" aria-label="Jump to performance chart">Chart</a>
+  <a class="fab" href="#performance-panel">Chart</a>
     <header class="site-header">
     <div class="profile-shell">
-      <div class="profile-bar" role="group" aria-label="Athlete header">
+      <div class="profile-bar" role="group">
         <div class="profile-bar-main">
           <img class="photo photo-inline" src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/cover_photo.jpg" alt="Portrait of Garrett Comer.">
           <div class="profile-bar-copy">
@@ -29,7 +29,7 @@
           <button type="button" class="utility-button" id="profile-toggle" aria-expanded="false" aria-controls="profile-panel">
             About Garrett
           </button>
-          <button type="button" class="utility-button" id="theme-toggle" aria-pressed="false" aria-label="Switch between light mode and dark mode">
+          <button type="button" class="utility-button" id="theme-toggle" aria-pressed="false">
             Dark mode
           </button>
         </div>
@@ -37,14 +37,14 @@
 
       <div id="profile-panel" class="profile-panel" hidden>
         <div class="meta">
-          <section aria-labelledby="profile-details-title">
+          <section>
             <h2 id="profile-details-title">Profile details</h2>
             <p><strong>School:</strong> Ann Arbor Skyline HS</p>
             <p><strong>Year:</strong> 11th Grade</p>
             <p><strong>Contact:</strong> <a href="mailto:example@gmail.com">example@gmail.com</a></p>
           </section>
 
-          <section aria-labelledby="bio-title">
+          <section>
             <h2 id="bio-title">Bio</h2>
             <p>
               Garrett is a junior on the Skyline XC team. After a mediocre freshman year and a season-ending injury during sophomore year, Garrett was more determined than ever to run well. He became one of the most consistent runners on the team, earning a top-7 spot in every race. He stood out not only for his running, but also for motivating teammates by leading cheers, keeping energy high, and staying positive. His favorite memories come from team camp, where everyone spent the day playing games and still had energy left over. His favorite race was Holly, where the team placed first and went on stage together with a big trophy.
@@ -56,7 +56,7 @@
   </header>
 
   <main id="main">
-    <section class="stats-overview" aria-labelledby="stats-title">
+    <section class="stats-overview">
       <div class="section-heading">
         <h2 id="stats-title">Season Snapshot</h2>
         <p class="section-copy">Some key numbers for Garret Comer.</p>
@@ -85,12 +85,12 @@
       </div>
     </section>
 
-    <section id="meets" class="meets" aria-labelledby="meets-title">
+    <section id="meets" class="meets">
       <div class="section-heading"><h2 id="meets-title">Meets</h2><p class="section-copy">Meet details below; click on 'More Info' for more details.</p></div>
 
       <div id="meet-grid" class="meet-grid">
 
-        <article class="meet-card" aria-labelledby="meet-1-title">
+        <article class="meet-card">
           <h3 id="meet-1-title">Lamplighter Invitational</h3>
 
           <div class="spacer">
@@ -109,7 +109,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-2-title">
+        <article class="meet-card">
           <h3 id="meet-2-title">2nd Ann Arbor City Preview presented by AARC</h3>
 
           <div class="spacer">
@@ -128,7 +128,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-3-title">
+        <article class="meet-card">
           <h3 id="meet-3-title">SEC-HS Jamboree 1 (Red/White Varsity Boys)</h3>
 
           <div class="spacer">
@@ -147,7 +147,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-4-title">
+        <article class="meet-card">
           <h3 id="meet-4-title">57th Annual Holly-Duane Raffin Festival of Races (D1 Boys)</h3>
 
           <div class="spacer">
@@ -166,12 +166,12 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-5-title">
+        <article class="meet-card">
           <h3 id="meet-5-title">Jackson Invitational (Orange Division (1000 + enrolment))</h3>
 
           <div class="spacer">
                       
-            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Photo from Jackson Invitational (Orange Division (1000 + enrolment))." >
+            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Jackson Invitational (Orange Division (1000 + enrolment))." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-5">
@@ -186,7 +186,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-6-title">
+        <article class="meet-card">
           <h3 id="meet-6-title">SEC-HS Jamboree 2 (Red) (Varsity Boys (Top 10))</h3>
 
           <div class="spacer">
@@ -205,7 +205,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-7-title">
+        <article class="meet-card">
           <h3 id="meet-7-title">DeWitt Cross Country Invitational (Boys Varsity Division 1 and 2)</h3>
 
           <div class="spacer">
@@ -224,7 +224,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-8-title">
+        <article class="meet-card">
           <h3 id="meet-8-title">2025 Portage Invitational (Division 1)</h3>
 
           <div class="spacer">
@@ -243,7 +243,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-9-title">
+        <article class="meet-card">
           <h3 id="meet-9-title">20th River Rat Open / Regional Preview (All Boys)</h3>
 
           <div class="spacer">
@@ -262,7 +262,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-10-title">
+        <article class="meet-card">
           <h3 id="meet-10-title">SEC-HS Championship (Varsity RED)</h3>
 
           <div class="spacer">
@@ -281,11 +281,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-11-title">
+        <article class="meet-card">
           <h3 id="meet-11-title">MHSAA LP Region 04-01 @ DeWitt (C)</h3>
 
           <div class="spacer">
-            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Photo from MHSAA LP Region 04-01 @ DeWitt (C)." >
+            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="MHSAA LP Region 04-01 @ DeWitt (C)." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-11">
@@ -300,11 +300,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-12-title">
+        <article class="meet-card">
           <h3 id="meet-12-title">MITCA Michigan Meet of Champions 2025 by HOKA (Boys Elite Open #2)</h3>
 
           <div class="spacer">
-            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Photo from MITCA Michigan Meet of Champions 2025 by HOKA (Boys Elite Open #2)." >
+            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="" >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-12">
@@ -319,7 +319,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-13-title">
+        <article class="meet-card">
           <h3 id="meet-13-title">37th Early Bird Open (HS Open 5K)</h3>
 
           <div class="spacer">
@@ -338,11 +338,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-14-title">
+        <article class="meet-card">
           <h3 id="meet-14-title">2024 Portage Invitational</h3>
 
           <div class="spacer">
-            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Photo from 2024 Portage Invitational." >
+            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="2024 Portage Invitational." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-14">
@@ -357,11 +357,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-15-title">
+        <article class="meet-card">
           <h3 id="meet-15-title">19th River Rat Open</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_RiverRat_2024.JPG" alt="Photo from 19th River Rat Open." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_RiverRat_2024.JPG" alt="19th River Rat Open." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-15">
@@ -376,11 +376,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-16-title">
+        <article class="meet-card">
           <h3 id="meet-16-title">SEC-HS Championship</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC_2024.JPG" alt="Photo from SEC-HS Championship." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC_2024.JPG" alt="SEC-HS Championship." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-16">
@@ -395,7 +395,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-17-title">
+        <article class="meet-card">
           <h3 id="meet-17-title">Region 4-1 &amp; 16-2 PROM Races</h3>
 
           <div class="spacer">
@@ -414,7 +414,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-18-title">
+        <article class="meet-card">
           <h3 id="meet-18-title">Early Bird Open (Open Men&#x27;s 5K)</h3>
 
           <div class="spacer">
@@ -433,7 +433,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-19-title">
+        <article class="meet-card">
           <h3 id="meet-19-title">Bret Clements Bath Invitational (J.V.)</h3>
 
           <div class="spacer">
@@ -452,11 +452,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-20-title">
+        <article class="meet-card">
           <h3 id="meet-20-title">SEC-HS Jamboree 1 (Red/White Varsity Boys)</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC1_2023.jpg" alt="Photo from SEC-HS Jamboree 1 (Red/White Varsity Boys)." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC1_2023.jpg" alt="SEC-HS Jamboree 1 (Red/White Varsity Boys)." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-20">
@@ -471,11 +471,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-21-title">
+        <article class="meet-card">
           <h3 id="meet-21-title">Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_Jackson_2023.JPG" alt="Photo from Jackson Invitational - Varsity (Orange Division (1000 + enrolment))." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_Jackson_2023.JPG" alt="Jackson Invitational - Varsity (Orange Division (1000 + enrolment))." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-21">
@@ -490,11 +490,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-22-title">
+        <article class="meet-card">
           <h3 id="meet-22-title">SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC2_2023.JPG" alt="Photo from SEC Jamboree 2 (Red) (Reserve Wave 1 (<21:00))." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_SEC2_2023.JPG" alt="SEC Jamboree 2 (Red) (Reserve Wave 1 (<21:00))." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-22">
@@ -509,11 +509,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-23-title">
+        <article class="meet-card">
           <h3 id="meet-23-title">2023 Portage XC Invitational (Division 1 Reserve)</h3>
 
           <div class="spacer">
-            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="Photo from 2023 Portage XC Invitational (Division 1 Reserve)." >
+            <img src="https://raw.githubusercontent.com/vannesschia/SI338/main/images/skyline_logo.png" alt="2023 Portage XC Invitational (Division 1 Reserve)." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-23">
@@ -528,11 +528,11 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-24-title">
+        <article class="meet-card">
           <h3 id="meet-24-title">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</h3>
 
           <div class="spacer">
-            <img src="https://si339.github.io/ClientData/21615274/Garrett_GabrielRichard2023.jpg" alt="Photo from 39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)." >
+            <img src="https://si339.github.io/ClientData/21615274/Garrett_GabrielRichard2023.jpg" alt="39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)." >
           </div>
 
           <button type="button" class="open-panel" aria-expanded="false" aria-controls="race-details-24">
@@ -547,7 +547,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-25-title">
+        <article class="meet-card">
           <h3 id="meet-25-title">SEC HS Championship (All Division Reserve)</h3>
 
           <div class="spacer">
@@ -566,7 +566,7 @@
           </div>
         </article>
 
-        <article class="meet-card" aria-labelledby="meet-26-title">
+        <article class="meet-card">
           <h3 id="meet-26-title">Post Regional Open Meet (PROM) - Springfiled Oaks</h3>
 
           <div class="spacer">
@@ -591,7 +591,6 @@
           id="performance-panel"
           class="panel"
           role="region"
-          aria-labelledby="performance-title"
           aria-live="polite"
           tabindex="-1">
 
@@ -602,7 +601,7 @@
           </div>
 
           <div class="viz-area">
-            <canvas id="time-chart" role="img" aria-label="Line chart of race times over time"></canvas>
+            <canvas id="time-chart" role="img"></canvas>
           </div>
         </div>
     </section>
@@ -765,6 +764,7 @@
     const first = races[0];
     const slowestSeconds = Math.max(...races.map((r) => r.seconds));
     const fastestSeconds = Math.min(...races.map((r) => r.seconds));
+
     const improvement = first.seconds - latest.seconds;
 
     const bestTimeValue = document.getElementById("best-time-value");

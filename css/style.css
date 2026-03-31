@@ -423,8 +423,8 @@ a:focus-visible,
 
 #time-chart {
   display: block;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 }
 
 /* Floating action button for quick navigation action. */
@@ -552,7 +552,7 @@ a:focus-visible,
   *,
   *::before,
   *::after {
-    animation: none !important;
-    transition: none !important;
+    animation: none;
+    transition: none;
   }
 }
